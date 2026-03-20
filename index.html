@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Navratri Mythology Quiz - Test Your Knowledge</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Animated Diyas Background -->
+    <div class="diya" style="top: 10%; left: 5%;"></div>
+    <div class="diya" style="top: 20%; right: 8%;"></div>
+    <div class="diya" style="bottom: 15%; left: 10%;"></div>
+    <div class="diya" style="bottom: 10%; right: 5%;"></div>
+
+    <!-- Main Container -->
+    <div id="landing-page" class="container">
+        <!-- Language Selector -->
+        <div class="language-selector">
+            <button class="lang-btn active" data-lang="en">English</button>
+            <button class="lang-btn" data-lang="hi">हिंदी</button>
+        </div>
+
+        <!-- Header -->
+        <header class="header">
+            <div class="header-content">
+                <h1 class="title"><span>🪔</span> Navratri Mythology Quiz 🌸</h1>
+                <p class="subtitle" data-translate="subtitle">Test Your Knowledge of the Divine Goddess & Sacred Traditions</p>
+            </div>
+        </header>
+
+        <!-- Welcome Section -->
+        <section class="welcome-section">
+            <div class="welcome-content">
+                <div class="durga-icon">🙏</div>
+                <h2>Welcome to the Navratri Celebration!</h2>
+                <p>Join us in a journey through Hindu mythology and the nine forms of Maa Durga. 
+                   Challenge yourself with our comprehensive quiz and celebrate the spirit of Navratri.</p>
+            </div>
+        </section>
+
+        <!-- Quiz Rules Section -->
+        <section class="rules-section">
+            <h2 class="section-title">📋 Quiz Rules & Information</h2>
+            <div class="rules-container">
+                <div class="rule-card">
+                    <div class="rule-icon">❓</div>
+                    <h3>Total Questions</h3>
+                    <p>60 Multiple Choice Questions</p>
+                </div>
+                <div class="rule-card">
+                    <div class="rule-icon">⏱️</div>
+                    <h3>Time Limit</h3>
+                    <p>15 Minutes</p>
+                </div>
+                <div class="rule-card">
+                    <div class="rule-icon">📊</div>
+                    <h3>Scoring</h3>
+                    <p>1 Point per Correct Answer</p>
+                </div>
+                <div class="rule-card">
+                    <div class="rule-icon">🏆</div>
+                    <h3>Winner Criteria</h3>
+                    <p>Score 50+ to Win</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Participation Details -->
+        <section class="participation-section">
+            <h2 class="section-title">📝 How to Participate</h2>
+            <div class="participation-content">
+                <ul class="steps-list">
+                    <li><strong>Read Carefully:</strong> Each question has 4 options. Choose the most appropriate answer.</li>
+                    <li><strong>No Negative Marking:</strong> Answer confidently; incorrect answers don't reduce your score.</li>
+                    <li><strong>Use Navigation:</strong> Use Previous and Next buttons to navigate through questions.</li>
+                    <li><strong>Track Progress:</strong> Watch your progress bar to see how many questions remain.</li>
+                    <li><strong>Submit Answers:</strong> Review all answers before submitting your quiz.</li>
+                    <li><strong>Instant Results:</strong> Get your score and certificate of participation immediately!</li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- Nine Forms of Maa Durga -->
+        <section class="goddesses-section">
+            <h2 class="section-title">🙏 The Nine Forms of Maa Durga</h2>
+            <div class="goddesses-grid">
+                <div class="goddess-card">
+                    <div class="goddess-number">1</div>
+                    <h3>Shailaputri</h3>
+                    <p>Daughter of the Mountains</p>
+                </div>
+                <div class="goddess-card">
+                    <div class="goddess-number">2</div>
+                    <h3>Brahmacharini</h3>
+                    <p>The Ascetic One</p>
+                </div>
+                <div class="goddess-card">
+                    <div class="goddess-number">3</div>
+                    <h3>Chandraghanta</h3>
+                    <p>Bell-shaped Moon</p>
+                </div>
+                <div class="goddess-card">
+                    <div class="goddess-number">4</div>
+                    <h3>Koosmanda</h3>
+                    <p>Creator of Cosmos</p>
+                </div>
+                <div class="goddess-card">
+                    <div class="goddess-number">5</div>
+                    <h3>Skandamata</h3>
+                    <p>Mother of Skanda</p>
+                </div>
+                <div class="goddess-card">
+                    <div class="goddess-number">6</div>
+                    <h3>Katyayani</h3>
+                    <p>Warrior Goddess</p>
+                </div>
+                <div class="goddess-card">
+                    <div class="goddess-number">7</div>
+                    <h3>Kaalratri</h3>
+                    <p>Night of Destruction</p>
+                </div>
+                <div class="goddess-card">
+                    <div class="goddess-number">8</div>
+                    <h3>Mahagauri</h3>
+                    <p>The Extremely White</p>
+                </div>
+                <div class="goddess-card">
+                    <div class="goddess-number">9</div>
+                    <h3>Siddhidatri</h3>
+                    <p>Giver of Powers</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Call to Action -->
+        <section class="cta-section">
+            <button id="start-btn" class="start-button" data-translate="startQuiz">Start the Quiz 🚀</button>
+        </section>
+    </div>
+
+    <!-- Registration Page -->
+    <div id="registration-page" style="display: none;">
+        <div class="registration-form">
+            <h2 data-translate="participantInfo">Participant Information</h2>
+            <div class="form-group">
+                <label for="participant-name" data-translate="name">Full Name</label>
+                <input type="text" id="participant-name" placeholder="Enter your full name" required>
+            </div>
+            <div class="form-group">
+                <label for="participant-email" data-translate="email">Email Address</label>
+                <input type="email" id="participant-email" placeholder="Enter your email" required>
+            </div>
+            <div class="form-group">
+                <label for="participant-phone" data-translate="phone">Phone Number</label>
+                <input type="tel" id="participant-phone" placeholder="Enter your phone number" required>
+            </div>
+            <div class="form-buttons">
+                <button class="form-buttons" style="flex: 1; padding: 12px; font-size: 1em; border: none; border-radius: 8px; font-weight: 600; cursor: pointer; transition: all 0.3s ease; background: linear-gradient(135deg, #C41E3A, #FF6B35); color: white;" id="start-quiz-btn" onclick="startQuiz()" data-translate="startButton">Start Quiz</button>
+                <button class="form-buttons" style="flex: 1; padding: 12px; font-size: 1em; border: none; border-radius: 8px; font-weight: 600; cursor: pointer; transition: all 0.3s ease; background: #f0f0f0; color: #C41E3A; border: 2px solid #ddd;" id="back-reg-btn" onclick="backToHome()" data-translate="backButton">Back</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Quiz Page -->
+    <div id="quiz-page" class="quiz-container" style="display: none;">
+        <!-- Header with Timer -->
+        <div class="quiz-header">
+            <div class="quiz-title">Navratri Mythology Quiz</div>
+            <div class="language-selector" style="position: static; gap: 5px; margin: 0;">
+                <button class="lang-btn active" data-lang="en" onclick="toggleLanguage('en')" style="font-size: 0.8em; padding: 5px 10px;">EN</button>
+                <button class="lang-btn" data-lang="hi" onclick="toggleLanguage('hi')" style="font-size: 0.8em; padding: 5px 10px;">हिं</button>
+            </div>
+            <div id="timer" class="timer">
+                <span id="time-display">15:00</span>
+            </div>
+        </div>
+
+        <!-- Progress Bar -->
+        <div class="progress-section">
+            <div class="progress-bar">
+                <div id="progress-fill" class="progress-fill"></div>
+            </div>
+            <div class="progress-text">
+                <span id="progress-count">1</span> / 60 Questions
+            </div>
+        </div>
+
+        <!-- Question Section -->
+        <div class="question-section">
+            <h2 id="question-text" class="question-text">Question</h2>
+            <div id="options-container" class="options-container">
+                <!-- Options will be inserted here by JavaScript -->
+            </div>
+        </div>
+
+        <!-- Navigation Buttons -->
+        <div class="quiz-navigation">
+            <button id="prev-btn" class="nav-button prev-button" disabled onclick="previousQuestion()" data-translate="previous">← Previous</button>
+            <button id="next-btn" class="nav-button next-button" onclick="nextQuestion()" data-translate="next">Next →</button>
+            <button id="submit-btn" class="nav-button submit-button" style="display: none;" onclick="submitQuiz()" data-translate="submit">Submit Quiz ✓</button>
+        </div>
+    </div>
+
+    <!-- Results Page -->
+    <div id="results-page" class="results-container" style="display: none;">
+        <div class="results-content">
+            <div class="results-header">
+                <h1>🎉 Quiz Completed! 🎉</h1>
+                <p>Thank you for participating in the Navratri Mythology Quiz</p>
+            </div>
+
+            <div class="score-section">
+                <div class="score-display">
+                    <div class="final-score">
+                        <span id="final-score">0</span>/60
+                    </div>
+                    <div class="percentage">
+                        <span id="percentage">0</span>%
+                    </div>
+                </div>
+                <div class="time-taken">
+                    <p>Time Taken: <span id="time-result">0</span> seconds</p>
+                </div>
+            </div>
+
+            <div id="result-message" class="result-message"></div>
+
+            <div class="certificate">
+                <div class="certificate-border">
+                    <div class="certificate-content">
+                        <h2>🏆 Certificate of Participation 🏆</h2>
+                        <p>This is to certify that</p>
+                        <p class="certificate-name" id="participant-name">Proud Participant</p>
+                        <p>has successfully completed the</p>
+                        <p class="certificate-title">Navratri Mythology Quiz</p>
+                        <p>with a score of <span id="cert-score">0</span>/60 (<span id="cert-percentage">0</span>%)</p>
+                        <p class="certificate-date" id="cert-date">20th March, 2026</p>
+                        <div class="certificate-signature">🙏 Maa Durga Bless You 🙏</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="results-buttons">
+                <button id="home-btn" class="home-button" onclick="backToHome()" data-translate="backToHome">Back to Home</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

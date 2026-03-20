@@ -1,0 +1,990 @@
+/* Navratri Quiz - Complete CSS Styling */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --primary-red: #C41E3A;
+    --primary-orange: #FF6B35;
+    --primary-gold: #FFD700;
+    --dark-text: #333;
+    --light-bg: #FFF8F3;
+    --border-radius: 12px;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(135deg, #FFF8F3 0%, #FFE8D6 100%);
+    min-height: 100vh;
+    color: var(--dark-text);
+    overflow-x: hidden;
+}
+
+/* Animated Diyas */
+.diya {
+    position: fixed;
+    width: 30px;
+    height: 40px;
+    background: radial-gradient(ellipse at 30% 30%, rgba(255, 215, 0, 0.8), rgba(255, 165, 0, 0.5));
+    border-radius: 0 0 15px 15px;
+    animation: float 6s ease-in-out infinite, glow 3s ease-in-out infinite;
+    opacity: 0.6;
+    z-index: 1;
+    pointer-events: none;
+}
+
+.diya::before {
+    content: '';
+    position: absolute;
+    top: -8px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 20px;
+    height: 10px;
+    background: radial-gradient(ellipse, #FFD700, #FF8C00);
+    border-radius: 50%;
+    box-shadow: 0 0 20px rgba(255, 215, 0, 0.8);
+}
+
+@keyframes float {
+    0%, 100% { transform: translateY(0px); }
+    50% { transform: translateY(-20px); }
+}
+
+@keyframes glow {
+    0%, 100% { box-shadow: 0 0 10px rgba(255, 215, 0, 0.5); }
+    50% { box-shadow: 0 0 25px rgba(255, 165, 0, 0.8); }
+}
+
+/* Container */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 40px 20px;
+}
+
+/* Header */
+.header {
+    text-align: center;
+    margin-bottom: 60px;
+    position: relative;
+    padding-top: 20px;
+}
+
+.title {
+    font-size: 3.5em;
+    background: linear-gradient(135deg, var(--primary-red), var(--primary-orange));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    margin-bottom: 10px;
+    animation: slideDown 0.8s ease-out;
+}
+
+.title span {
+    display: inline-block;
+    animation: spin 3s linear infinite;
+}
+
+@keyframes slideDown {
+    from {
+        opacity: 0;
+        transform: translateY(-30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes spin {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+}
+
+.subtitle {
+    font-size: 1.3em;
+    color: var(--primary-orange);
+    font-weight: 500;
+}
+
+/* Language Selector */
+.language-selector {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    display: flex;
+    gap: 10px;
+    z-index: 10;
+}
+
+.lang-btn {
+    padding: 8px 16px;
+    background: white;
+    border: 2px solid var(--primary-orange);
+    color: var(--primary-orange);
+    border-radius: 20px;
+    cursor: pointer;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    font-size: 0.9em;
+}
+
+.lang-btn:hover {
+    background: var(--primary-orange);
+    color: white;
+    transform: scale(1.05);
+}
+
+.lang-btn.active {
+    background: var(--primary-red);
+    color: white;
+    border-color: var(--primary-red);
+}
+
+/* Welcome Section */
+.welcome-section {
+    background: linear-gradient(135deg, rgba(196, 30, 58, 0.1), rgba(255, 107, 53, 0.1));
+    padding: 40px;
+    border-radius: var(--border-radius);
+    margin-bottom: 50px;
+    border: 2px solid rgba(196, 30, 58, 0.2);
+    text-align: center;
+}
+
+.durga-icon {
+    font-size: 5em;
+    margin-bottom: 20px;
+    animation: bounce 2s ease-in-out infinite;
+}
+
+@keyframes bounce {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-20px); }
+}
+
+.welcome-section h2 {
+    color: var(--primary-red);
+    font-size: 2em;
+    margin-bottom: 15px;
+}
+
+.welcome-section p {
+    color: #666;
+    font-size: 1.1em;
+    line-height: 1.6;
+}
+
+/* Rules Section */
+.rules-section {
+    margin-bottom: 50px;
+}
+
+.section-title {
+    text-align: center;
+    font-size: 2.2em;
+    color: var(--primary-red);
+    margin-bottom: 40px;
+    position: relative;
+    padding-bottom: 15px;
+}
+
+.section-title::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100px;
+    height: 3px;
+    background: linear-gradient(90deg, var(--primary-red), var(--primary-orange));
+    border-radius: 2px;
+}
+
+.rules-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 25px;
+    margin-bottom: 40px;
+}
+
+.rule-card {
+    background: white;
+    padding: 30px;
+    border-radius: var(--border-radius);
+    text-align: center;
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+    border-top: 4px solid var(--primary-red);
+}
+
+.rule-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 15px 40px rgba(196, 30, 58, 0.2);
+}
+
+.rule-icon {
+    font-size: 3em;
+    margin-bottom: 15px;
+    display: inline-block;
+}
+
+.rule-card h3 {
+    color: var(--primary-red);
+    margin-bottom: 10px;
+    font-size: 1.3em;
+}
+
+.rule-card p {
+    color: #666;
+    font-size: 1.1em;
+}
+
+/* Participation Section */
+.participation-section {
+    background: linear-gradient(135deg, rgba(255, 107, 53, 0.08), rgba(255, 215, 0, 0.08));
+    padding: 40px;
+    border-radius: var(--border-radius);
+    margin-bottom: 50px;
+    border-left: 5px solid var(--primary-orange);
+}
+
+.participation-content {
+    max-width: 700px;
+    margin: 0 auto;
+}
+
+.steps-list {
+    list-style: none;
+}
+
+.steps-list li {
+    padding: 15px;
+    margin-bottom: 10px;
+    background: white;
+    border-radius: 8px;
+    border-left: 4px solid var(--primary-gold);
+    color: #333;
+    line-height: 1.6;
+}
+
+.steps-list strong {
+    color: var(--primary-red);
+}
+
+/* Goddesses Section */
+.goddesses-section {
+    margin-bottom: 50px;
+}
+
+.goddesses-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 20px;
+}
+
+.goddess-card {
+    background: linear-gradient(135deg, var(--primary-red), var(--primary-orange));
+    color: white;
+    padding: 20px;
+    border-radius: var(--border-radius);
+    text-align: center;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.goddess-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: rgba(255, 255, 255, 0.2);
+    transition: left 0.5s ease;
+}
+
+.goddess-card:hover::before {
+    left: 100%;
+}
+
+.goddess-card:hover {
+    transform: scale(1.05) rotateY(5deg);
+    box-shadow: 0 10px 30px rgba(196, 30, 58, 0.3);
+}
+
+.goddess-number {
+    font-size: 2.5em;
+    font-weight: bold;
+    margin-bottom: 10px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.goddess-card h3 {
+    font-size: 1.2em;
+    margin-bottom: 5px;
+}
+
+.goddess-card p {
+    font-size: 0.9em;
+    opacity: 0.9;
+}
+
+/* CTA Section */
+.cta-section {
+    text-align: center;
+    margin: 50px 0;
+}
+
+.start-button {
+    padding: 18px 50px;
+    font-size: 1.3em;
+    background: linear-gradient(135deg, var(--primary-red), var(--primary-orange));
+    color: white;
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: all 0.3s ease;
+    box-shadow: 0 8px 25px rgba(196, 30, 58, 0.3);
+}
+
+.start-button:hover {
+    transform: scale(1.08);
+    box-shadow: 0 12px 35px rgba(196, 30, 58, 0.4);
+}
+
+.start-button:active {
+    transform: scale(0.95);
+}
+
+/* Registration Form */
+#registration-page {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+}
+
+.registration-form {
+    background: white;
+    padding: 50px;
+    border-radius: 16px;
+    box-shadow: 0 15px 50px rgba(0, 0, 0, 0.15);
+    max-width: 500px;
+    width: 100%;
+    animation: slideUp 0.5s ease-out;
+}
+
+@keyframes slideUp {
+    from {
+        opacity: 0;
+        transform: translateY(50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.registration-form h2 {
+    background: linear-gradient(135deg, var(--primary-red), var(--primary-orange));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    text-align: center;
+    font-size: 2em;
+    margin-bottom: 30px;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 8px;
+    color: var(--primary-red);
+    font-weight: 600;
+}
+
+.form-group input {
+    width: 100%;
+    padding: 12px;
+    border: 2px solid #ddd;
+    border-radius: 8px;
+    font-size: 1em;
+    transition: all 0.3s ease;
+}
+
+.form-group input:focus {
+    outline: none;
+    border-color: var(--primary-red);
+    box-shadow: 0 0 10px rgba(196, 30, 58, 0.2);
+}
+
+.form-buttons {
+    display: flex;
+    gap: 15px;
+    margin-top: 30px;
+}
+
+.form-buttons button {
+    flex: 1;
+    padding: 12px;
+    font-size: 1em;
+    border: none;
+    border-radius: 8px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.form-buttons .start-btn {
+    background: linear-gradient(135deg, var(--primary-red), var(--primary-orange));
+    color: white;
+}
+
+.form-buttons .start-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(196, 30, 58, 0.3);
+}
+
+.form-buttons .back-btn {
+    background: #f0f0f0;
+    color: var(--primary-red);
+    border: 2px solid #ddd;
+}
+
+.form-buttons .back-btn:hover {
+    background: #e8e8e8;
+}
+
+/* Quiz Page */
+#quiz-page {
+    background: linear-gradient(135deg, #FFF8F3 0%, #FFE8D6 100%);
+    min-height: 100vh;
+    padding: 20px;
+}
+
+.quiz-container {
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.quiz-header {
+    background: linear-gradient(135deg, var(--primary-red), var(--primary-orange));
+    color: white;
+    padding: 20px;
+    border-radius: 12px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 30px;
+    box-shadow: 0 8px 25px rgba(196, 30, 58, 0.2);
+}
+
+.quiz-title {
+    font-size: 1.5em;
+    font-weight: bold;
+}
+
+.timer {
+    font-size: 1.8em;
+    font-weight: bold;
+    padding: 10px 20px;
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 8px;
+}
+
+/* Progress Bar */
+.progress-section {
+    margin-bottom: 30px;
+}
+
+.progress-bar {
+    width: 100%;
+    height: 10px;
+    background: #ddd;
+    border-radius: 10px;
+    overflow: hidden;
+    margin-bottom: 10px;
+}
+
+.progress-fill {
+    height: 100%;
+    background: linear-gradient(90deg, var(--primary-red), var(--primary-orange));
+    transition: width 0.3s ease;
+    border-radius: 10px;
+}
+
+.progress-text {
+    text-align: center;
+    color: #666;
+    font-weight: 600;
+}
+
+/* Question Section */
+.question-section {
+    background: white;
+    padding: 40px;
+    border-radius: 12px;
+    margin-bottom: 30px;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+}
+
+.question-text {
+    color: var(--primary-red);
+    font-size: 1.4em;
+    margin-bottom: 30px;
+    line-height: 1.6;
+}
+
+.options-container {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.option {
+    display: flex;
+    align-items: center;
+    padding: 15px;
+    border: 2px solid #ddd;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    background: #f9f9f9;
+}
+
+.option input[type="radio"] {
+    width: 20px;
+    height: 20px;
+    margin-right: 15px;
+    cursor: pointer;
+    accent-color: var(--primary-red);
+}
+
+.option span {
+    flex: 1;
+    font-size: 1.05em;
+    color: #333;
+}
+
+.option:hover {
+    background: rgba(196, 30, 58, 0.05);
+    border-color: var(--primary-red);
+}
+
+.option input[type="radio"]:checked + span {
+    font-weight: 600;
+    color: var(--primary-red);
+}
+
+/* Navigation Buttons */
+.quiz-navigation {
+    display: flex;
+    gap: 15px;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.nav-button {
+    padding: 12px 30px;
+    font-size: 1em;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: 600;
+    transition: all 0.3s ease;
+}
+
+.prev-button {
+    background: #f0f0f0;
+    color: #333;
+    border: 2px solid #ddd;
+}
+
+.prev-button:hover:not(:disabled) {
+    background: #e8e8e8;
+    border-color: #999;
+}
+
+.prev-button:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+.next-button {
+    background: linear-gradient(135deg, var(--primary-orange), var(--primary-gold));
+    color: white;
+}
+
+.next-button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(255, 107, 53, 0.3);
+}
+
+.submit-button {
+    background: linear-gradient(135deg, var(--primary-red), var(--primary-orange));
+    color: white;
+    padding: 12px 40px;
+    font-size: 1.1em;
+}
+
+.submit-button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(196, 30, 58, 0.3);
+}
+
+/* Results Page */
+#results-page {
+    min-height: 100vh;
+    padding: 40px 20px;
+    background: linear-gradient(135deg, #FFF8F3 0%, #FFE8D6 100%);
+}
+
+.results-container {
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.results-content {
+    background: white;
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0 15px 50px rgba(0, 0, 0, 0.15);
+}
+
+.results-header {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.results-header h1 {
+    color: var(--primary-red);
+    font-size: 2.5em;
+    margin-bottom: 10px;
+}
+
+.results-header p {
+    color: #666;
+    font-size: 1.1em;
+}
+
+/* Score Section */
+.score-section {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 30px;
+    margin-bottom: 40px;
+    text-align: center;
+}
+
+.score-display {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+}
+
+.final-score {
+    background: linear-gradient(135deg, var(--primary-red), var(--primary-orange));
+    color: white;
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 3.5em;
+    font-weight: bold;
+    box-shadow: 0 10px 30px rgba(196, 30, 58, 0.3);
+}
+
+.percentage {
+    font-size: 2.5em;
+    font-weight: bold;
+    color: var(--primary-orange);
+}
+
+.time-taken {
+    background: rgba(255, 215, 0, 0.1);
+    padding: 20px;
+    border-radius: 8px;
+    border-left: 5px solid var(--primary-gold);
+    color: #333;
+}
+
+/* Result Message */
+.result-message {
+    text-align: center;
+    font-size: 1.3em;
+    font-weight: 600;
+    padding: 20px;
+    border-radius: 8px;
+    margin-bottom: 30px;
+}
+
+.result-message.success {
+    background: rgba(76, 175, 80, 0.1);
+    color: #4CAF50;
+}
+
+.result-message.good {
+    background: rgba(255, 152, 0, 0.1);
+    color: #FF9800;
+}
+
+.result-message.average {
+    background: rgba(244, 67, 54, 0.1);
+    color: #F44336;
+}
+
+/* Certificate */
+.certificate {
+    margin: 40px 0;
+    display: flex;
+    justify-content: center;
+}
+
+.certificate-border {
+    border: 5px solid var(--primary-gold);
+    border-radius: 8px;
+    background: linear-gradient(135deg, rgba(196, 30, 58, 0.05), rgba(255, 215, 0, 0.1));
+    padding: 40px;
+    max-width: 600px;
+    text-align: center;
+}
+
+.certificate-content h2 {
+    color: var(--primary-red);
+    font-size: 2em;
+    margin-bottom: 20px;
+}
+
+.certificate-content p {
+    color: #333;
+    line-height: 2;
+    font-size: 1.1em;
+}
+
+.certificate-name {
+    font-weight: bold;
+    color: var(--primary-red);
+    font-size: 1.3em;
+    text-transform: uppercase;
+}
+
+.certificate-title {
+    font-weight: bold;
+    color: var(--primary-orange);
+}
+
+.certificate-date {
+    margin-top: 20px;
+    color: #666;
+    font-style: italic;
+}
+
+.certificate-signature {
+    color: var(--primary-red);
+    font-weight: bold;
+    font-size: 1.5em;
+    margin-top: 20px;
+}
+
+/* Answer Review */
+.answer-review-section {
+    margin: 40px 0;
+    background: #f9f9f9;
+    padding: 30px;
+    border-radius: 12px;
+}
+
+.answer-review-section h3 {
+    color: var(--primary-red);
+    font-size: 1.5em;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.review-item {
+    background: white;
+    padding: 20px;
+    margin-bottom: 15px;
+    border-radius: 8px;
+    border-left: 5px solid #ddd;
+    transition: all 0.3s ease;
+}
+
+.review-item.correct {
+    border-left-color: #4CAF50;
+    background: rgba(76, 175, 80, 0.05);
+}
+
+.review-item.incorrect {
+    border-left-color: #F44336;
+    background: rgba(244, 67, 54, 0.05);
+}
+
+.review-item p {
+    margin: 8px 0;
+    color: #333;
+    line-height: 1.6;
+}
+
+.review-item .status {
+    margin-top: 10px;
+    font-weight: bold;
+}
+
+.review-item.correct .status {
+    color: #4CAF50;
+}
+
+.review-item.incorrect .status {
+    color: #F44336;
+}
+
+/* Results Buttons */
+.results-buttons {
+    display: flex;
+    gap: 15px;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-top: 40px;
+}
+
+.results-buttons button {
+    padding: 12px 30px;
+    font-size: 1em;
+    border: none;
+    border-radius: 8px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.home-button {
+    background: linear-gradient(135deg, var(--primary-red), var(--primary-orange));
+    color: white;
+}
+
+.home-button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(196, 30, 58, 0.3);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .title {
+        font-size: 2.5em;
+    }
+    
+    .subtitle {
+        font-size: 1em;
+    }
+    
+    .rules-container {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
+    .goddesses-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+    
+    .score-section {
+        grid-template-columns: 1fr;
+    }
+    
+    .quiz-header {
+        flex-direction: column;
+        gap: 15px;
+    }
+    
+    .registration-form {
+        padding: 30px;
+    }
+    
+    .question-section {
+        padding: 20px;
+    }
+    
+    .results-header h1 {
+        font-size: 2em;
+    }
+    
+    .final-score {
+        width: 120px;
+        height: 120px;
+        font-size: 2.5em;
+    }
+    
+    .percentage {
+        font-size: 2em;
+    }
+}
+
+@media (max-width: 480px) {
+    .title {
+        font-size: 1.8em;
+    }
+    
+    .rules-container {
+        grid-template-columns: 1fr;
+    }
+    
+    .goddesses-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
+    .goddess-card h3 {
+        font-size: 0.9em;
+    }
+    
+    .goddess-card p {
+        font-size: 0.8em;
+    }
+    
+    .start-button {
+        padding: 12px 30px;
+        font-size: 1em;
+    }
+    
+    .section-title {
+        font-size: 1.5em;
+    }
+    
+    .rule-card {
+        padding: 20px;
+    }
+    
+    .rule-icon {
+        font-size: 2.5em;
+    }
+    
+    .header {
+        margin-bottom: 30px;
+    }
+    
+    .welcome-section {
+        padding: 20px;
+    }
+    
+    .participation-section {
+        padding: 20px;
+    }
+    
+    .language-selector {
+        position: static;
+        justify-content: center;
+        margin-bottom: 20px;
+        flex-wrap: wrap;
+    }
+}
