@@ -347,7 +347,7 @@ let participantPhone = '';
 let quizStartTime = 0;
 let quizEndTime = 0;
 let timerInterval = null;
-let timeRemaining = 15 * 60; // 15 minutes in seconds
+let timeRemaining = 5 * 60; // 5 minutes in seconds
 
 // Language Toggle Functions
 function toggleLanguage(lang) {
@@ -505,8 +505,8 @@ function loadQuestions() {
     document.getElementById('progress-fill').style.width = progressPercent + '%';
     
     document.getElementById('prev-btn').disabled = currentQuestionIndex === 0;
-    document.getElementById('next-btn').style.display = currentQuestionIndex < 59 ? 'block' : 'none';
-    document.getElementById('submit-btn').style.display = currentQuestionIndex === 59 ? 'block' : 'none';
+    document.getElementById('next-btn').style.display = currentQuestionIndex < 29 ? 'block' : 'none';
+    document.getElementById('submit-btn').style.display = currentQuestionIndex === 29 ? 'block' : 'none';
 }
 
 // Record Answer
@@ -528,7 +528,7 @@ function previousQuestion() {
 
 function nextQuestion() {
     recordAnswer();
-    if (currentQuestionIndex < 59) {
+    if (currentQuestionIndex < 29) {
         currentQuestionIndex++;
         loadQuestions();
     }
