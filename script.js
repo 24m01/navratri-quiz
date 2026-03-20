@@ -328,13 +328,10 @@ let quizData = {
     ]
 };
 
-// Ensure we have 60 questions by repeating if necessary
+// Ensure we have 30 questions by keeping only first 30
 function expandQuizData() {
     for (let lang in quizData) {
-        while (quizData[lang].length < 60) {
-            quizData[lang] = quizData[lang].concat(quizData[lang].slice(0, 60 - quizData[lang].length));
-        }
-        quizData[lang] = quizData[lang].slice(0, 60);
+        quizData[lang] = quizData[lang].slice(0, 30);
     }
 }
 expandQuizData();
@@ -473,9 +470,9 @@ function startQuiz() {
     document.getElementById('quiz-page').style.display = 'block';
     
     quizStartTime = Date.now();
-    userAnswers = new Array(60).fill(null);
+    userAnswers = new Array(30).fill(null);
     currentQuestionIndex = 0;
-    timeRemaining = 15 * 60;
+    timeRemaining = 6 * 60;
     
     loadQuestions();
     startTimer();
@@ -503,7 +500,7 @@ function loadQuestions() {
     });
     
     document.getElementById('progress-count').textContent = currentQuestionIndex + 1;
-    const progressPercent = ((currentQuestionIndex + 1) / 60) * 100;
+    const progressPercent = ((currentQuestionIndex + 1) / 30) * 100;
     document.getElementById('progress-fill').style.width = progressPercent + '%';
     
     document.getElementById('prev-btn').disabled = currentQuestionIndex === 0;
@@ -571,7 +568,7 @@ function submitQuiz() {
         }
     });
     
-    const percentage = Math.round((score / 60) * 100);
+    const percentage = Math.round((score / 30) * 100);
     const timeTaken = Math.round((quizEndTime - quizStartTime) / 1000);
     
     // Show Results

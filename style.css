@@ -74,6 +74,20 @@ body {
     padding-top: 20px;
 }
 
+.org-name {
+    display: block;
+    margin-bottom: 20px;
+    font-size: 1.5em;
+    font-weight: bold;
+    color: var(--primary-red);
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+.header-content {
+    position: relative;
+}
+
 .title {
     font-size: 3.5em;
     background: linear-gradient(135deg, var(--primary-red), var(--primary-orange));
@@ -295,6 +309,16 @@ body {
     transition: all 0.3s ease;
     position: relative;
     overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.goddess-image {
+    font-size: 3.5em;
+    margin-bottom: 10px;
+    display: inline-block;
+    filter: drop-shadow(2px 2px 4px rgba(0, 0, 0, 0.3));
 }
 
 .goddess-card::before {
