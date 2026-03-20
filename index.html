@@ -17,8 +17,8 @@
     <div id="landing-page" class="container">
         <!-- Language Selector -->
         <div class="language-selector">
-            <button class="lang-btn active" data-lang="en">English</button>
-            <button class="lang-btn" data-lang="hi">हिंदी</button>
+            <button class="lang-btn active" data-lang="en" onclick="toggleLanguage('en')">English</button>
+            <button class="lang-btn" data-lang="hi" onclick="toggleLanguage('hi')">हिंदी</button>
         </div>
 
         <!-- Header -->
@@ -231,7 +231,7 @@
                     <div class="certificate-content">
                         <h2>🏆 Certificate of Participation 🏆</h2>
                         <p>This is to certify that</p>
-                        <p class="certificate-name" id="participant-name">Proud Participant</p>
+                        <p class="certificate-name" id="cert-participant-name">Proud Participant</p>
                         <p>has successfully completed the</p>
                         <p class="certificate-title">Navratri Mythology Quiz</p>
                         <p>with a score of <span id="cert-score">0</span>/60 (<span id="cert-percentage">0</span>%)</p>

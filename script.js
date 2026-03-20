@@ -583,7 +583,7 @@ function submitQuiz() {
     document.getElementById('time-result').textContent = Math.round(timeTaken / 60);
     document.getElementById('cert-score').textContent = score;
     document.getElementById('cert-percentage').textContent = percentage;
-    document.getElementById('participant-name').textContent = participantName;
+    document.getElementById('cert-participant-name').textContent = participantName;
     
     // Set result message
     const resultMessage = document.getElementById('result-message');
