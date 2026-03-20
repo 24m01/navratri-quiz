@@ -4,7 +4,8 @@
 const GOOGLE_FORM_ID = '1FAIpQLSfAcAeorv8XfSvyR9hSMfYA-A7SgQMcIe_WlAAe6tOtv5lj0w';
 const GOOGLE_FORM_URL = `https://docs.google.com/forms/d/e/${GOOGLE_FORM_ID}/formResponse`;
 
-// Google Form Field Entry IDs (Map your form fields here)
+// Google Form Field Entry IDs - These are the field mappings for your form
+// You can customize these IDs based on your form structure
 const FORM_FIELDS = {
     timestamp: 'entry.1640993264',      // Timestamp
     name: 'entry.1568531234',            // Participant Name
