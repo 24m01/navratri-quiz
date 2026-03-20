@@ -506,7 +506,7 @@ function loadQuestions() {
     
     document.getElementById('prev-btn').disabled = currentQuestionIndex === 0;
     document.getElementById('next-btn').style.display = currentQuestionIndex < 29 ? 'block' : 'none';
-    document.getElementById('submit-btn').style.display = currentQuestionIndex === 29 ? 'block' : 'none';
+    document.getElementById('submit-btn').style.display = 'block';
 }
 
 // Record Answer
